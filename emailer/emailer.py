@@ -13,7 +13,7 @@ def read_template(filename):
 def sendemail(recipient, absencedict, periodnum):
     datetoday = str(date.today())
 
-    f = open("password.txt", 'r')
+    f = open("/home/vishal/RFPresence/emailer/password.txt", 'r')
     txt = f.read().split()
     MY_ADDRESS = txt[0]
     PASSWORD = txt[1]
@@ -23,7 +23,7 @@ def sendemail(recipient, absencedict, periodnum):
     s.starttls()
     s.login(MY_ADDRESS, PASSWORD)
 
-    message_template = read_template('emailer/messagetemplate.txt')
+    message_template = read_template('/home/vishal/RFPresence/emailer/messagetemplate.txt')
     absentstring = ""
 
     for i in absencedict:
